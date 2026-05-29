@@ -1,0 +1,9 @@
+identifier	type	label	description
+ID	TYPE	AT rdfs:label^^xsd:string	AT dc:description^^xsd:string
+BSEO:0000001	owl:Class	role
+BSEO:0000002	owl:Class	family
+BSEO:0000003	owl:Class	function type
+BSEO:0000004	owl:Class	basis set
+BSEO:0100000	owl:ObjectProperty	has role	connects a basis set to its role
+BSEO:0100001	owl:ObjectProperty	has family	connects a basis set to its family
+BSEO:0100002	owl:ObjectProperty	has function type	connects a basis set to its function type

@@ -206,13 +206,19 @@ def main() -> None:
 
     seen = set()
 
+    part_counter = Counter()
+
     for basis_set in basis_sets:
         if basis_set.name.strip() in seen:
             continue  # FIXME why are there duplicates?
         seen.add(basis_set.name.strip())
 
         # TODO understand internal structure
-        basis_set.name.split("-")
+        for part_level_1 in basis_set.name.split("-"):
+            for part_level_2 in part_level_1.split():
+                if part_level_2.isnumeric():
+                    continue
+                part_counter[part_level_2] += 1
 
         for name_prefix, parent_curie in parent_names:
             if basis_set.name.startswith(name_prefix):
@@ -237,6 +243,8 @@ def main() -> None:
             )
         )
         counter += 1
+
+    pd.DataFrame(part_counter.most_common(), columns=['name', 'frequency']).to_csv("parts.tsv", sep='\t', index=False)
 
     pd.DataFrame(rows, columns=header_1).to_csv("terms.tsv", sep="\t", index=False)
     robot()

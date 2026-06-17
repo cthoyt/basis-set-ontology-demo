@@ -9,12 +9,14 @@
 # ///
 
 import os
+import random
+
 import pandas as pd
 from pydantic import BaseModel
 import pystow
 from tabulate import tabulate
 import click
-from collections import Counter
+from collections import Counter, defaultdict
 from tqdm import tqdm
 import tarfile
 import json
@@ -206,19 +208,20 @@ def main() -> None:
 
     seen = set()
 
-    part_counter = Counter()
+    part_counter = defaultdict(list)
 
     for basis_set in basis_sets:
         if basis_set.name.strip() in seen:
             continue  # FIXME why are there duplicates?
         seen.add(basis_set.name.strip())
 
-        # TODO understand internal structure
+        # understand internal structure
         for part_level_1 in basis_set.name.split("-"):
             for part_level_2 in part_level_1.split():
-                if part_level_2.isnumeric():
-                    continue
-                part_counter[part_level_2] += 1
+                for part_level_3 in part_level_2.split("("):
+                    if part_level_3.isnumeric():
+                        continue
+                    part_counter[part_level_3.lower()].append(basis_set.name)
 
         for name_prefix, parent_curie in parent_names:
             if basis_set.name.startswith(name_prefix):
@@ -244,7 +247,13 @@ def main() -> None:
         )
         counter += 1
 
-    pd.DataFrame(part_counter.most_common(), columns=['name', 'frequency']).to_csv("parts.tsv", sep='\t', index=False)
+    state = random.Random(42)
+    parts = [
+        (key, len(values), ", ".join(sorted(set(state.choices(values, k=3)))))
+        for key, values in part_counter.items()
+    ]
+
+    pd.DataFrame(parts, columns=['name', 'frequency', "examples"]).sort_values('frequency', ascending=False).to_csv("parts.tsv", sep='\t', index=False)
 
     pd.DataFrame(rows, columns=header_1).to_csv("terms.tsv", sep="\t", index=False)
     robot()

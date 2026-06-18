@@ -1,3 +1,8 @@
-part	title	category	description	references
-x2c	exact 2 component hamiltonian	hamiltonian		https://www.faccts.de/docs/orca/6.0/manual/contents/typical/relativistic.html
-dkh	Douglas-Kroll-Hess hamiltonian	hamiltonian		https://www.faccts.de/docs/orca/6.0/manual/contents/typical/relativistic.html
+part	label	synonyms	category	description	references
+x2c	exact 2 component hamiltonian		hamiltonian		https://www.faccts.de/docs/orca/6.0/manual/contents/typical/relativistic.html
+dkh	Douglas-Kroll-Hess hamiltonian		hamiltonian		https://www.faccts.de/docs/orca/6.0/manual/contents/typical/relativistic.html
+rifit	Resolution-of-the-Identity (RI) fit				https://www.faccts.de/docs/orca/6.1/manual/contents/essentialelements/RI.html
+aug	augmented		transformation	augment the base basis set with diffuse functions
+cc	correlation-consistent		transformation
+pp	pseudopotential	effective core potential	transformation	the basis set was reoptimized to work with a specific ECP. note that pp can also mean double polarization
+pp	double polarization

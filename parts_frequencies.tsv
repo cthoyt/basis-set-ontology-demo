@@ -1,8 +1,8 @@
 name	curated	frequency	examples
-cc		236	cc-pV5Z-PP, cc-pVDZ-F12-OPTRI, cc-pwCVTZ-DK3
-aug		147	aug-cc-pVQZ-RIFIT, aug-cc-pVTZ, aug-pcJ-3
-pp		56	aug-cc-pVTZ-PP-RIFIT, cc-pV5Z-PP-RIFIT, cc-pwCV5Z-PP
-rifit		49	6-311G**-RIFIT, cc-pwCVQZ-PP-RIFIT, def2-SV(P)-RIFIT
+cc	yes	236	cc-pV5Z-PP, cc-pVDZ-F12-OPTRI, cc-pwCVTZ-DK3
+aug	yes	147	aug-cc-pVQZ-RIFIT, aug-cc-pVTZ, aug-pcJ-3
+pp	yes	56	aug-cc-pVTZ-PP-RIFIT, cc-pV5Z-PP-RIFIT, cc-pwCV5Z-PP
+rifit	yes	49	6-311G**-RIFIT, cc-pwCVQZ-PP-RIFIT, def2-SV(P)-RIFIT
 pvtz		39	cc-pVTZ(fi/sf/lc), cc-pVTZ(pt/sf/fw)
 pvqz		37	aug-cc-pVQZ-DK, aug-cc-pVQZ-PP-OPTRI, cc-pVQZ-PP-RIFIT
 pvdz		35	aug-cc-pVDZ-DK, aug-cc-pVDZ-PP, cc-pVDZ(pt/sf/lc)

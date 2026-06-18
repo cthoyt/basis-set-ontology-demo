@@ -32,6 +32,7 @@ TMP.mkdir(parents=True, exist_ok=True)
 manual_output = TMP.joinpath("manual.owl")
 automatic_output = TMP.joinpath("automatic.owl")
 final_output = HERE.joinpath(PREFIX.lower()).with_suffix(".owl")
+parts_notes = HERE.joinpath("parts_notes.tsv")
 
 
 class BasisSet(BaseModel):
@@ -81,7 +82,7 @@ def main() -> None:
         "label",
         "abbreviation",
         "parent",
-        'description',
+        "description",
         "has role",
         "has family",
         "has function type",
@@ -236,27 +237,45 @@ def main() -> None:
             (
                 f"{PREFIX}:{counter:07}",
                 "owl:Class",
-                NAMES.get(basis_set.name, basis_set.name),  # TODO require all have proper names
+                NAMES.get(
+                    basis_set.name, basis_set.name
+                ),  # TODO require all have proper names
                 basis_set.name,
                 parent,
-                basis_set.description if basis_set.description != basis_set.name else "",
+                basis_set.description
+                if basis_set.description != basis_set.name
+                else "",
                 role_to_curie[basis_set.role],
                 family_to_curie[basis_set.family],
-                "|".join(function_type_to_curie[f] for f in basis_set.function_types or []),
+                "|".join(
+                    function_type_to_curie[f] for f in basis_set.function_types or []
+                ),
             )
         )
         counter += 1
 
+    parts_already_described = set(pd.read_csv(parts_notes, sep="\t")["part"])
+
     state = random.Random(42)
     parts = [
-        (key, len(values), ", ".join(sorted(set(state.choices(values, k=3)))))
+        (
+            key,
+            "yes" if key in parts_already_described else "",
+            len(values),
+            ", ".join(sorted(set(state.choices(values, k=3)))),
+        )
         for key, values in part_counter.items()
     ]
 
-    pd.DataFrame(parts, columns=['name', 'frequency', "examples"]).sort_values('frequency', ascending=False).to_csv("parts.tsv", sep='\t', index=False)
+    pd.DataFrame(
+        parts, columns=["name", "curated", "frequency", "examples"]
+    ).sort_values("frequency", ascending=False).to_csv(
+        "parts_frequencies.tsv", sep="\t", index=False
+    )
 
     pd.DataFrame(rows, columns=header_1).to_csv("terms.tsv", sep="\t", index=False)
     robot()
+
 
 def robot():
     os.system(
@@ -277,7 +296,8 @@ def robot():
         f"--input {automatic_output} "
         "annotate "
         f'--ontology-iri "http://purl.obolibrary.org/obo/{PREFIX.lower()}.owl" '
-        f"--output {final_output}")
+        f"--output {final_output}"
+    )
 
 
 if __name__ == "__main__":

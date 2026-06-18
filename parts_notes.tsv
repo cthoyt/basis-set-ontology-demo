@@ -1,0 +1,3 @@
+part	title	category	description	references
+x2c	exact 2 component hamiltonian	hamiltonian		https://www.faccts.de/docs/orca/6.0/manual/contents/typical/relativistic.html
+dkh	Douglas-Kroll-Hess hamiltonian	hamiltonian		https://www.faccts.de/docs/orca/6.0/manual/contents/typical/relativistic.html

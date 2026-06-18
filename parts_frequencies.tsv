@@ -1,0 +1,343 @@
+name	curated	frequency	examples
+cc		236	cc-pV5Z-PP, cc-pVDZ-F12-OPTRI, cc-pwCVTZ-DK3
+aug		147	aug-cc-pVQZ-RIFIT, aug-cc-pVTZ, aug-pcJ-3
+pp		56	aug-cc-pVTZ-PP-RIFIT, cc-pV5Z-PP-RIFIT, cc-pwCV5Z-PP
+rifit		49	6-311G**-RIFIT, cc-pwCVQZ-PP-RIFIT, def2-SV(P)-RIFIT
+pvtz		39	cc-pVTZ(fi/sf/lc), cc-pVTZ(pt/sf/fw)
+pvqz		37	aug-cc-pVQZ-DK, aug-cc-pVQZ-PP-OPTRI, cc-pVQZ-PP-RIFIT
+pvdz		35	aug-cc-pVDZ-DK, aug-cc-pVDZ-PP, cc-pVDZ(pt/sf/lc)
+x2c	yes	34	aug-cc-pVDZ-X2C, cc-pwCVDZ-X2C, x2c-QZVPall
+ano		32	ANO-R1, ano-pVDZ, aug-ano-pVDZ
+pv5z		30	cc-pV5Z(fi/sf/sc), cc-pV5Z(pt/sf/sc), cc-pV5Z-PP-RIFIT
+def2		28	def2-SVPD, def2-universal-JFIT, def2-universal-JKFIT
+sapporo		24	Sapporo-DKH3-QZP-diffuse, Sapporo-TZP-diffuse
+dyall		24	dyall-aae4z, dyall-av4z, dyall-cv3z
+f12		23	cc-pCVDZ-F12-OPTRI, cc-pCVTZ-F12-OPTRI, cc-pVQZ-F12
+jorge		21	jorge-5ZP-DKH, jorge-6ZP
+pv		20	aug-cc-pV(5+d)Z, aug-cc-pV(Q+d)Z, may-cc-pV(T+d)Z
+pcj		20	pcJ-3, pcJ-3_2006, pcJ-4_2006
+dk		20	aug-cc-pVQZ-DK, cc-pwCV5Z-DK, cc-pwCVQZ-DK
+seg		19	aug-seg-cc-pVQZ-PP, cc-pVTZ(seg-opt), seg-cc-pwCVQZ-PP
+lcecp		18	lcecp-0-TZVPP, lcecp-2-QZVP, lcecp-2-SVP
+optri		18	aug-cc-pV5Z-PP-OPTRI, aug-cc-pVQZ-OPTRI, aug-cc-pwCVDZ-PP-OPTRI
+pwcvqz		17	aug-cc-pwCVQZ, aug-cc-pwCVQZ-DK, cc-pwCVQZ-X2C
+pwcvtz		17	cc-pwCVTZ, cc-pwCVTZ-RIFIT, cc-pwCVTZ-X2C
+		16	SV + Rydberg (Dunning-Hay), SVP (Dunning-Hay), SVP + Diffuse (Dunning-Hay)
+pwcvdz		15	aug-cc-pwCVDZ-X2C, cc-pwCVDZ, cc-pwCVDZ-PP-RIFIT
+dzp		15	DZP + Diffuse (Dunning-Hay), DZP + Rydberg (Dunning-Hay)
+diffuse		15	Sapporo-DKH3-DZP-diffuse, Sapporo-DZP-diffuse, Sapporo-TZP-2012-diffuse
+dunning		14	DZ + Double Rydberg (Dunning-Hay), SV (Dunning-Hay), SVP + Diffuse + Rydberg (Dunning-Hay)
+hay)		14	DZP (Dunning-Hay), DZP + Diffuse (Dunning-Hay), SVP (Dunning-Hay)
+zora		13	SARC2-QZV-ZORA, jorge-ATZP-ZORA, jorge-QZP-ZORA
+dk3		13	aug-cc-pVDZ-DK3, aug-cc-pVQZ-DK3, cc-pwCVTZ-DK3
+sv		13	SV + Rydberg (Dunning-Hay), def2-SV(P)-JKFIT, dhf-SV(P)
+pwcv5z		13	aug-cc-pwCV5Z-PP-OPTRI, cc-pwCV5Z-DK, cc-pwCV5Z-PP-RIFIT
+dkh3		12	Sapporo-DKH3-DZP-diffuse, Sapporo-DKH3-QZP-2012-diffuse, Sapporo-DKH3-QZP-diffuse
+tzp		12	Sapporo-DKH3-TZP, Sapporo-DKH3-TZP-diffuse, Sapporo-TZP-2012
+qzp		12	Sapporo-DKH3-QZP-diffuse, Sapporo-QZP-diffuse, jorge-QZP-ZORA
+binning		12	binning 641(df), binning 962+(df)
++		11	SV + Double Rydberg (Dunning-Hay), SV + Rydberg (Dunning-Hay)
+qzvp		10	SARC2-QZVP-DKH2, dhf-QZVP
+nr		10	2ZaPa-NR, 4ZaPa-NR, 6ZaPa-NR
+svp		10	dhf-SVP, lcecp-1-SVP, lcecp-2-SVP
+dz		10	DZ + Double Rydberg (Dunning-Hay), SBO4-DZ(d,p)-3G
+pcseg		10	aug-pcseg-0, aug-pcseg-1, aug-pcseg-3
+j		10	6-31+G*-J, 6-311++G**-J
+pc		10	aug-pc-4, pc-1, pc-3
+pcsseg		10	aug-pcSseg-2, pcSseg-3, pcSseg-4
+pcs		10	aug-pcS-2, aug-pcS-3, pcS-2
+31g		9	6-31G, 6-31G(3df,3pd), 6-31G-J
+jkfit		9	cc-pVQZ-JKFIT, def2-SV(P)-JKFIT, def2-universal-JKFIT
+tzvp		9	lcecp-2-TZVP, pob-TZVP
+ecp		9	CRENBS ECP, LANL2DZ ECP, Stuttgart RSC Segmented + ECP
+d		8	PB4-D, PB5-D, d-aug-cc-pVQZ
+s		8	x2c-QZVPPall-s, x2c-SVPall-s, x2c-TZVPall-s
+pcx		8	aug-pcX-4, pcX-2, pcX-4
+sarc2		8	SARC2-QZV-ZORA-JKFIT, SARC2-QZVP-DKH2, SARC2-QZVP-ZORA-JKFIT
+2c		8	x2c-QZVPPall-2c-s, x2c-QZVPall-2c, x2c-QZVPall-2c-s
+ccx		8	aug-ccX-DZ, ccX-5Z
+nasa		8	NASA Ames ANO, NASA Ames cc-pCVTZ, NASA Ames cc-pVTZ
+ames		8	NASA Ames ANO2, NASA Ames cc-pCVTZ
+pch		8	aug-pcH-2, pcH-3, pcH-4
+pcvqz		8	NASA Ames cc-pCVQZ, aug-cc-pCVQZ-DK, cc-pCVQZ
+pcvtz		8	cc-pCVTZ-F12, cc-pCVTZ-F12-OPTRI, cc-pCVTZ-F12-RIFIT
+pcvdz		7	aug-cc-pCVDZ, aug-cc-pCVDZ-DK, cc-pCVDZ-F12-RIFIT
+q+d)z		7	aug-cc-pV(Q+d)Z, jun-cc-pV(Q+d)Z
+rydberg		7	DZ + Rydberg (Dunning-Hay), SV + Rydberg (Dunning-Hay)
+pv6z		7	aug-cc-pV6Z-RIFIT, cc-pV6Z, cc-pV6Z-RIFIT
+p)		7	def2-SV(P), def2-SV(P)-RIFIT, lcecp-0-SV(P)
+dgauss		7	dgauss-a1-dftjfit, dgauss-a1-dftxfit
+rcc		7	ANO-RCC, ANO-RCC-VDZP, ANO-RCC-VTZP
+dhf		7	dhf-QZVP, dhf-SVP, dhf-TZVP
+qzvpp		6	def2-QZVPP, def2-QZVPP-RIFIT
+sto		6	STO-4G, STO-5G
+d)		6	binning 641(d), binning 641+(d), binning 962(d)
+stuttgart		6	Stuttgart RLC, Stuttgart RLC ECP, Stuttgart RSC 1997
+t+d)z		6	aug-cc-pV(T+d)Z, may-cc-pV(T+d)Z
+dkh	yes	6	jorge-6ZP-DKH, jorge-TZP-DKH
+dkh2		6	Cologne DKH2, SARC2-QZV-DKH2-JKFIT, SARC2-QZVP-DKH2
+mcc		6	aug-mcc-pV6Z, aug-mcc-pVTZ
+admm		6	admm-1, admm-3, aug-admm-2
+tz		6	FANO-TZ, TZ (Dunning-Hay), aug-ccX-TZ
+tzvpp		6	lcecp-1-TZVPP, lcecp-2-TZVPP
+fano		5	FANO-5Z, FANO-DZ
+jgauss		5	jgauss-qz2p, jgauss-qzp, jgauss-tzp1
+qz		5	ANO-VT-QZ, FANO-QZ, ccX-QZ
+paw		5	PAW-L1, PAW-L1-contracted, PAW-L2-contracted
+d+d)z		5	cc-pV(D+d)Z, jun-cc-pV(D+d)Z, maug-cc-pV(D+d)Z
+coemd		4	coemd-2, coemd-3, coemd-ref
+fi/sf/sc)		4	cc-pV5Z(fi/sf/sc), cc-pVDZ(fi/sf/sc)
+pt/sf/sc)		4	cc-pV5Z(pt/sf/sc), cc-pVDZ(pt/sf/sc), cc-pVQZ(pt/sf/sc)
+df)		4	binning 641+(df), binning 962(df)
+qzv		4	SARC2-QZV-DKH2-JKFIT, SARC2-QZV-ZORA, SARC2-QZV-ZORA-JKFIT
+pt/sf/lc)		4	cc-pVDZ(pt/sf/lc), cc-pVQZ(pt/sf/lc), cc-pVTZ(pt/sf/lc)
+rev2)		4	cc-pVDZ-F12(rev2), cc-pVQZ-F12(rev2)
+saug		4	saug-ano-pVDZ, saug-ano-pVQZ
+fi/sf/fw)		4	cc-pVDZ(fi/sf/fw), cc-pVQZ(fi/sf/fw), cc-pVTZ(fi/sf/fw)
+pt/sf/fw)		4	cc-pVDZ(pt/sf/fw), cc-pVQZ(pt/sf/fw), cc-pVTZ(pt/sf/fw)
+fi/sf/lc)		4	cc-pVDZ(fi/sf/lc)
+pv7z		4	aug-cc-pV7Z, pV7Z
+pb6		4	PB6-F, PB6-G
+cv		4	2ZaPa-NR-CV, 4ZaPa-NR-CV
+21g		4	3-21G, 6-21G
+partridge		4	Partridge Uncontracted 2, Partridge Uncontracted 4
+qzvppall		4	x2c-QZVPPall, x2c-QZVPPall-2c-s
+qzvpall		4	x2c-QZVPall-2c, x2c-QZVPall-2c-s, x2c-QZVPall-s
+uncontracted		4	Partridge Uncontracted 2, Partridge Uncontracted 4
+311g		4	6-311G, 6-311G(2df,2pd), 6-311G-J
+d,p)		4	6-311G(d,p), 6-31G(d,p), SBO4-DZ(d,p)-3G
+3g		4	SBO4-DZ(d)-3G, SBO4-SZ-3G, STO-3G
+31g*		4	6-31G*, 6-31G*-Blaudeau, m6-31G*
+rsc		4	Stuttgart RSC ANO, Stuttgart RSC Segmented + ECP
+ccj		4	ccJ-pV5Z
+ahlrichs		4	Ahlrichs TZV, Ahlrichs VDZ, Ahlrichs VTZ
+pcemd		4	pcemd-2, pcemd-3, un-pcemd-ref
+dfo		4	DFO-1, DFO-1-BHS, DFO-NRLMOL
+ref		3	coemd-ref, un-ccemd-ref
+universal		3	def2-universal-JFIT, def2-universal-JKFIT
+jfit		3	def2-universal-JFIT, x2c-JFIT
+maug		3	maug-cc-pV(D+d)Z, maug-cc-pV(Q+d)Z
+lanl2dz		3	LANL2DZ ECP, modified-LANL2DZ
+lanl08		3	LANL08, LANL08(f)
+dzvp		3	deMon2k-DZVP-GGA, dgauss-dzvp
+ccemd		3	ccemd-2, un-ccemd-ref
+jun		3	jun-cc-pV(Q+d)Z, jun-cc-pV(T+d)Z
+jul		3	jul-cc-pV(D+d)Z, jul-cc-pV(T+d)Z
+pb5		3	PB5-F, PB5-G
+hgbs		3	HGBS-7, HGBS-9
+psx		3	PsX-DZ, PsX-QZ, PsX-TZ
+6zp		3	jorge-6ZP-DKH, jorge-6ZP-ZORA
+5zp		3	jorge-5ZP, jorge-5ZP-DKH
+pb4		3	PB4-D, PB4-F1, PB4-F2
+pob		3	pob-TZVP-rev2
+hgbsp3		3	HGBSP3-5, HGBSP3-7, HGBSP3-9
+hgbsp2		3	HGBSP2-5, HGBSP2-7, HGBSP2-9
+hgbsp1		3	HGBSP1-5, HGBSP1-7
+double		3	DZ + Double Rydberg (Dunning-Hay), Roos Augmented Double Zeta ANO, SV + Double Rydberg (Dunning-Hay)
+sbkjc		3	SBKJC-ECP, SBKJC-VDZ
+tzvppall		3	x2c-TZVPPall, x2c-TZVPPall-s
+optri+		3	cc-pVQZ-F12-OPTRI+, cc-pVTZ-F12-OPTRI+
+ahgbsp3		3	AHGBSP3-5, AHGBSP3-9
+vt		3	ANO-VT-DZ, ANO-VT-QZ, ANO-VT-TZ
+sbo4		3	SBO4-DZ(d)-3G, SBO4-SZ-3G
+atzp		3	ATZP-ZORA, jorge-ATZP-ZORA
+pcv5z		3	NASA Ames cc-pCV5Z, aug-cc-pCV5Z, cc-pCV5Z
+311++g		3	6-311++G, 6-311++G(2d,2p), 6-311++G(3df,3pd)
+5z		3	FANO-5Z, aug-ccX-5Z
+ahgbsp1		3	AHGBSP1-5, AHGBSP1-7, AHGBSP1-9
+ahgbsp2		3	AHGBSP2-5, AHGBSP2-7
+p)all		3	x2c-SV(P)all, x2c-SV(P)all-s
+ahgbs		3	AHGBS-5, AHGBS-7, AHGBS-9
+vdz		3	ANO-RCC-VDZ, Ahlrichs VDZ
+svpall		3	x2c-SVPall, x2c-SVPall-2c, x2c-SVPall-s
+641+		3	binning 641+(d)
+tzvpall		3	x2c-TZVPall, x2c-TZVPall-s
+962+		3	binning 962+, binning 962+(df)
+opt)		3	cc-pVDZ(seg-opt), cc-pVQZ(seg-opt)
+epc		2	epc-10s10p10d10f, epc-8s8p8d
+blaudeau		2	6-31G*-Blaudeau, 6-31G-Blaudeau
+31g**		2	6-31G**, 6-31G**-RIFIT
+f		2	PB5-F, PB6-F
+g		2	PB6-G
+acv3z		2	acv3z-J, dyall-acv3z
+acv2z		2	acv2z-J, dyall-acv2z
+roos		2	Roos Augmented Double Zeta ANO, Roos Augmented Triple Zeta ANO
+pecj		2	pecJ-1, pecJ-2
+acv4z		2	acv4z-J, dyall-acv4z
+vtz		2	ANO-RCC-VTZ, Ahlrichs VTZ
+311g**		2	6-311G**-RIFIT
+rlc		2	Stuttgart RLC, Stuttgart RLC ECP
+un		2	un-ccemd-ref, un-pcemd-ref
+iglo		2	IGLO-II, IGLO-III
+31++g**		2	6-31++G**
+may		2	may-cc-pV(Q+d)Z, may-cc-pV(T+d)Z
+3zapa		2	3ZaPa-NR, 3ZaPa-NR-CV
+m6		2	m6-31G, m6-31G*
+lanl2tz		2	LANL2TZ, LANL2TZ(f)
+4zapa		2	4ZaPa-NR, 4ZaPa-NR-CV
+f)		2	LANL2TZ(f)
+5zapa		2	5ZaPa-NR, 5ZaPa-NR-CV
+31+g*		2	6-31+G*, 6-31+G*-J
+311+g*		2	6-311+G*, 6-311+G*-J
+3df,3pd)		2	6-31G(3df,3pd)
+l1		2	PAW-L1, PAW-L1-contracted
+311++g**		2	6-311++G**, 6-311++G**-J
+311+g		2	6-311+G, 6-311+G(2d,p)
+zeta		2	Roos Augmented Double Zeta ANO, Roos Augmented Triple Zeta ANO
+contracted		2	PAW-L1-contracted, PAW-L2-contracted
+l2		2	PAW-L2
+augmented		2	Roos Augmented Double Zeta ANO, Roos Augmented Triple Zeta ANO
+rev2		2	pob-DZVP-rev2, pob-TZVP-rev2
+mini		2	MINI, Scaled MINI
+2zapa		2	2ZaPa-NR, 2ZaPa-NR-CV
+dftjfit		2	dgauss-a2-dftjfit
+1_2006		2	pcJ-1_2006
+a1		2	dgauss-a1-dftjfit, dgauss-a1-dftxfit
+0_2006		2	aug-pcJ-0_2006, pcJ-0_2006
+pv8z		2	aug-mcc-pV8Z, cc-pV8Z
+qzvppd		2	def2-QZVPPD, def2-QZVPPD-RIFIT
+nrlmol		2	DFO+-NRLMOL
+a2		2	dgauss-a2-dftjfit
+vdzp		2	ANO-RCC-VDZP, Grimme vDZP
+5+d)z		2	aug-cc-pV(5+d)Z, cc-pV(5+d)Z
+svpd		2	def2-SVPD, def2-SVPD-RIFIT
+s3		2	s3-21G, s3-21G*
+tzvpd		2	def2-TZVPD
+sarc		2	SARC-DKH2, SARC-ZORA
+tzvppd		2	def2-TZVPPD, def2-TZVPPD-RIFIT
+dftxfit		2	dgauss-a1-dftxfit, dgauss-a2-dftxfit
+crenbl		2	CRENBL, CRENBL ECP
+2_2006		2	aug-pcJ-2_2006, pcJ-2_2006
+3_2006		2	aug-pcJ-3_2006, pcJ-3_2006
+4_2006		2	aug-pcJ-4_2006, pcJ-4_2006
+crenbs		2	CRENBS, CRENBS ECP
+mtzvpp		2	def2-mTZVPP-RIJ
+s6		2	s6-31G
+l05		1	PAW-L05
+polarized		1	SBKJC Polarized (p,2d) - LFK
+ano2		1	NASA Ames ANO2
+wachters+f		1	Wachters+f
+nlo		1	NLO-V
+p,2d)		1	SBKJC Polarized (p,2d) - LFK
+orp		1	ORP
+lfk		1	SBKJC Polarized (p,2d) - LFK
+wtbs		1	WTBS
+v		1	NLO-V
+nmr		1	NMR-DKH (TZ2P)
+tz2p)		1	NMR-DKH (TZ2P)
+sz		1	SBO4-SZ-3G
+triple		1	Roos Augmented Triple Zeta ANO
+scaled		1	Scaled MINI
+sap_helfem_large		1	sap_helfem_large
+21g*		1	s3-21G*
+mdzp		1	Pt - mDZP
+pt		1	Pt - mDZP
+2g		1	STO-2G
+psbkjc		1	pSBKJC
+sadlej		1	Sadlej pVTZ
+sadlej+		1	Sadlej+
+sap_grasp_large		1	sap_grasp_large
+h		1	PB6-H
+3g*		1	STO-3G*
+sap_grasp_small		1	sap_grasp_small
+sigmatzhf		1	sigmaTZHF
+sigmadz		1	sigmaDZ
+sigmatz		1	sigmaTZ
+sap_helfem_small		1	sap_helfem_small
+4g		1	STO-4G
+5g		1	STO-5G
+sigmaszhf		1	sigmaSZHF
+6g		1	STO-6G
+sigmaqz		1	sigmaQZ
+sigmadzhf		1	sigmaDZHF
+f2		1	PB4-F2
+f1		1	PB4-F1
+ugbs		1	UGBS
+segmented		1	Stuttgart RSC Segmented + ECP
+2zap		1	2ZaP
+modified		1	modified-LANL2DZ
+asigmatz		1	asigmaTZ
+r2		1	ANO-R2
+r3		1	ANO-R3
+mb		1	ANO-RCC-MB
+vqzp		1	ANO-RCC-VQZP
+vtzp		1	ANO-RCC-VTZP
+apr		1	apr-cc-pV(Q+d)Z
+asigmadz		1	asigmaDZ
+asigmaqz		1	asigmaQZ
+cadpac		1	CADPAC-TZ2P
+r0		1	ANO-R0
+tz2p		1	CADPAC-TZ2P
+pv9z		1	cc-pV9Z
+cologne		1	Cologne DKH2
+mtzvp		1	def2-mTZVP
+rij		1	def2-mTZVPP-RIJ
+qzvpd		1	def2-QZVPD
+demon2k		1	deMon2k-DZVP-GGA
+gga		1	deMon2k-DZVP-GGA
+r1		1	ANO-R1
+r		1	ANO-R
+midix		1	MIDIX
+311++g*		1	6-311++G*
+3zap		1	3ZaP
+4zap		1	4ZaP
+5zap		1	5ZaP
+31++g		1	6-31++G
+31++g*		1	6-31++G*
+31+g		1	6-31+G
+31+g**		1	6-31+G**
+2d,2p)		1	6-311++G(2d,2p)
+2d,p)		1	6-311+G(2d,p)
+tzv		1	Ahlrichs TZV
+311+g**		1	6-311+G**
+2df,2pd)		1	6-311G(2df,2pd)
+311g*		1	6-311G*
+311xxg		1	6-311xxG(d,p)
+2df,p)		1	6-31G(2df,p)
+6zap		1	6ZaP
+6zapa		1	6ZaPa-NR
+7zapa		1	7ZaPa-NR
+dfo+		1	DFO+-NRLMOL
+dzvp2		1	dgauss-dzvp2
+aae2z		1	dyall-aae2z
+a6zp		1	jorge-A6ZP
+6z		1	FANO-6Z
+grimme		1	Grimme vDZP
+ii		1	IGLO-II
+iii		1	IGLO-III
+qz2p		1	jgauss-qz2p
+tzp1		1	jgauss-tzp1
+tzp2		1	jgauss-tzp2
+a5zp		1	jorge-A5ZP
+adzp		1	jorge-ADZP
+aae3z		1	dyall-aae3z
+aqzp		1	jorge-AQZP
+koga		1	Koga unpolarized
+unpolarized		1	Koga unpolarized
+lanl08+		1	LANL08+
+lanl2dzdp		1	LANL2DZdp
+lanl2tz+		1	LANL2TZ+
+midi		1	MIDI
+midi!		1	MIDI!
+8s8p8d		1	epc-8s8p8d
+10s10p10d10f		1	epc-10s10p10d10f
+v5z		1	dyall-v5z
+v4z		1	dyall-v4z
+aae4z		1	dyall-aae4z
+aae5z		1	dyall-aae5z
+acv5z		1	dyall-acv5z
+ae2z		1	dyall-ae2z
+ae3z		1	dyall-ae3z
+ae4z		1	dyall-ae4z
+ae5z		1	dyall-ae5z
+av2z		1	dyall-av2z
+av3z		1	dyall-av3z
+av4z		1	dyall-av4z
+av5z		1	dyall-av5z
+cv2z		1	dyall-cv2z
+cv3z		1	dyall-cv3z
+cv4z		1	dyall-cv4z
+cv5z		1	dyall-cv5z
+v2z		1	dyall-v2z
+v3z		1	dyall-v3z
+bhs		1	DFO-1-BHS

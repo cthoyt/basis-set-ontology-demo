@@ -1,5 +1,18 @@
 # basis-set-ontology-demo
 
+## Ranges
+
+We're using the informal ID-ranges:
+
+- `0000000` - `0099999` are manually curated classes
+- `0100000` - `0199999` are basis sets originating from basis set exchange
+- `0200000` - `0299999` are families from basis set exchange
+- `0300000` - `0399999` are roles from basis set exchange
+- `0400000` - `0499999` are function types from basis set exchange
+- `1000000` - `1999999` are properties (manually curated )
+
+## Exploration
+
 Naming of basis sets is complicated! Take `aug-cc-pVTZ`:
 
 | Part | Meaning                       |

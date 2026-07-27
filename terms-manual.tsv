@@ -1,9 +1,23 @@
-identifier	type	label	description
-ID	TYPE	AT rdfs:label^^xsd:string	AT dc:description^^xsd:string
+identifier	type	label	description	parent
+ID	TYPE	AT rdfs:label^^xsd:string	AT dc:description^^xsd:string	SC %
 BSEO:0000001	owl:Class	role
 BSEO:0000002	owl:Class	family
 BSEO:0000003	owl:Class	function type
 BSEO:0000004	owl:Class	basis set
-BSEO:0100000	owl:ObjectProperty	has role	connects a basis set to its role
-BSEO:0100001	owl:ObjectProperty	has family	connects a basis set to its family
-BSEO:0100002	owl:ObjectProperty	has function type	connects a basis set to its function type
+BSEO:0000005	owl:Class	ANO basis set		BSEO:0000004
+BSEO:0000006	owl:Class	ANO-RCC basis set		BSEO:0000004
+BSEO:0000007	owl:Class	STO basis set		BSEO:0000004
+BSEO:0000008	owl:Class	seg-cc basis set		BSEO:0000004
+BSEO:0000009	owl:Class	SBO4 basis set		BSEO:0000004
+BSEO:0000010	owl:Class	saug-ano basis set		BSEO:0000004
+BSEO:0000011	owl:Class	SARC2-QZVP basis set		BSEO:0000004
+BSEO:0000012	owl:Class	SARC2-QZV basis set		BSEO:0000004
+BSEO:0000013	owl:Class	Sapporo-TZP basis set		BSEO:0000004
+BSEO:0000014	owl:Class	Sapporo-QZP basis set		BSEO:0000004
+BSEO:0000015	owl:Class	Sapporo-DZP basis set		BSEO:0000004
+BSEO:0000016	owl:Class	Sapporo-DKH3 basis set		BSEO:0000004
+BSEO:0000017	owl:Class	pob basis set		BSEO:0000004
+BSEO:0000018	owl:Class	pcSseg basis set		BSEO:0000004
+BSEO:0000019	owl:Class	pcseg basis set		BSEO:0000004
+BSEO:0000020	owl:Class	pcS basis set		BSEO:0000004
+BSEO:0000021	owl:Class	pcJ basis set		BSEO:0000004

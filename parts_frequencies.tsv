@@ -3,21 +3,21 @@ cc	yes	236	cc-pV5Z-PP, cc-pVDZ-F12-OPTRI, cc-pwCVTZ-DK3
 aug	yes	147	aug-cc-pVQZ-RIFIT, aug-cc-pVTZ, aug-pcJ-3
 pp	yes	56	aug-cc-pVTZ-PP-RIFIT, cc-pV5Z-PP-RIFIT, cc-pwCV5Z-PP
 rifit	yes	49	6-311G**-RIFIT, cc-pwCVQZ-PP-RIFIT, def2-SV(P)-RIFIT
-pvtz		39	cc-pVTZ(fi/sf/lc), cc-pVTZ(pt/sf/fw)
+pvtz	yes	39	cc-pVTZ(fi/sf/lc), cc-pVTZ(pt/sf/fw)
 pvqz		37	aug-cc-pVQZ-DK, aug-cc-pVQZ-PP-OPTRI, cc-pVQZ-PP-RIFIT
 pvdz		35	aug-cc-pVDZ-DK, aug-cc-pVDZ-PP, cc-pVDZ(pt/sf/lc)
 x2c	yes	34	aug-cc-pVDZ-X2C, cc-pwCVDZ-X2C, x2c-QZVPall
-ano		32	ANO-R1, ano-pVDZ, aug-ano-pVDZ
+ano	yes	32	ANO-R1, ano-pVDZ, aug-ano-pVDZ
 pv5z		30	cc-pV5Z(fi/sf/sc), cc-pV5Z(pt/sf/sc), cc-pV5Z-PP-RIFIT
 def2		28	def2-SVPD, def2-universal-JFIT, def2-universal-JKFIT
-sapporo		24	Sapporo-DKH3-QZP-diffuse, Sapporo-TZP-diffuse
+sapporo	yes	24	Sapporo-DKH3-QZP-diffuse, Sapporo-TZP-diffuse
 dyall		24	dyall-aae4z, dyall-av4z, dyall-cv3z
 f12		23	cc-pCVDZ-F12-OPTRI, cc-pCVTZ-F12-OPTRI, cc-pVQZ-F12
-jorge		21	jorge-5ZP-DKH, jorge-6ZP
+jorge	yes	21	jorge-5ZP-DKH, jorge-6ZP
 pv		20	aug-cc-pV(5+d)Z, aug-cc-pV(Q+d)Z, may-cc-pV(T+d)Z
 pcj		20	pcJ-3, pcJ-3_2006, pcJ-4_2006
 dk		20	aug-cc-pVQZ-DK, cc-pwCV5Z-DK, cc-pwCVQZ-DK
-seg		19	aug-seg-cc-pVQZ-PP, cc-pVTZ(seg-opt), seg-cc-pwCVQZ-PP
+seg	yes	19	aug-seg-cc-pVQZ-PP, cc-pVTZ(seg-opt), seg-cc-pwCVQZ-PP
 lcecp		18	lcecp-0-TZVPP, lcecp-2-QZVP, lcecp-2-SVP
 optri		18	aug-cc-pV5Z-PP-OPTRI, aug-cc-pVQZ-OPTRI, aug-cc-pwCVDZ-PP-OPTRI
 pwcvqz		17	aug-cc-pwCVQZ, aug-cc-pwCVQZ-DK, cc-pwCVQZ-X2C
@@ -28,7 +28,7 @@ dzp		15	DZP + Diffuse (Dunning-Hay), DZP + Rydberg (Dunning-Hay)
 diffuse		15	Sapporo-DKH3-DZP-diffuse, Sapporo-DZP-diffuse, Sapporo-TZP-2012-diffuse
 dunning		14	DZ + Double Rydberg (Dunning-Hay), SV (Dunning-Hay), SVP + Diffuse + Rydberg (Dunning-Hay)
 hay)		14	DZP (Dunning-Hay), DZP + Diffuse (Dunning-Hay), SVP (Dunning-Hay)
-zora		13	SARC2-QZV-ZORA, jorge-ATZP-ZORA, jorge-QZP-ZORA
+zora	yes	13	SARC2-QZV-ZORA, jorge-ATZP-ZORA, jorge-QZP-ZORA
 dk3		13	aug-cc-pVDZ-DK3, aug-cc-pVQZ-DK3, cc-pwCVTZ-DK3
 sv		13	SV + Rydberg (Dunning-Hay), def2-SV(P)-JKFIT, dhf-SV(P)
 pwcv5z		13	aug-cc-pwCV5Z-PP-OPTRI, cc-pwCV5Z-DK, cc-pwCV5Z-PP-RIFIT

@@ -6,3 +6,9 @@ aug	augmented		transformation	augment the base basis set with diffuse functions
 cc	correlation-consistent		transformation
 pp	pseudopotential	effective core potential	transformation	the basis set was reoptimized to work with a specific ECP. note that pp can also mean double polarization
 pp	double polarization
+pvtz	polarized valence triple-zeta basis
+ano	Atomic Natural Orbital
+seg	segmented contraction
+jorge				basis sets made by the group of Fernando E. Jorge
+sapporo				basis sets made by groups at Sapporo, such as Kazuyoshi Tatewaki
+zora	Zeroth-Order Regular Approximation		hamiltonian

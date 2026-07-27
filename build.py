@@ -8,17 +8,19 @@
 # ]
 # ///
 
-import os
-import pandas as pd
-from pydantic import BaseModel
-import pystow
-from tabulate import tabulate
-import click
-from collections import Counter
-from tqdm import tqdm
-import tarfile
 import json
+import os
+import random
+import tarfile
+from collections import Counter, defaultdict
 from pathlib import Path
+
+import click
+import pandas as pd
+import pystow
+from pydantic import BaseModel
+from tabulate import tabulate
+from tqdm import tqdm
 
 PREFIX = "BSEO"  # basis set exchange ontology
 VERSION = "0.12"
@@ -27,9 +29,13 @@ HERE = Path(__file__).parent.resolve()
 TMP = HERE / "tmp"
 TMP.mkdir(parents=True, exist_ok=True)
 
-manual_output = TMP.joinpath("manual.owl")
-automatic_output = TMP.joinpath("automatic.owl")
+manual_terms_owl_path = TMP.joinpath("manual_terms.owl")
+manual_properties_owl_path = TMP.joinpath("manual_properties.owl")
+derived_terms_owl_path = TMP.joinpath("derived_terms.owl")
+derived_relations_owl_path = TMP.joinpath("derived_parents.owl")
+
 final_output = HERE.joinpath(PREFIX.lower()).with_suffix(".owl")
+parts_notes = HERE.joinpath("parts_notes.tsv")
 
 
 class BasisSet(BaseModel):
@@ -40,7 +46,7 @@ class BasisSet(BaseModel):
     function_types: list[str]
 
 
-NAMES = {
+NAMES: dict[str, str] = {
     "gto": "Gaussian-type orbitals",
     "gto_spherical": "spherical Gaussian-type orbitals",
     "gto_cartesian": "cartesian Gaussian-type orbitals",
@@ -79,7 +85,7 @@ def main() -> None:
         "label",
         "abbreviation",
         "parent",
-        'description',
+        "description",
         "has role",
         "has family",
         "has function type",
@@ -91,30 +97,16 @@ def main() -> None:
         "AT oboInOwl:hasExactSynonym^^xsd:string",
         "SC %",
         "AT dc:description^^xsd:string",
-        "SC BSEO:0100000",
-        "SC BSEO:0100001",
-        "SC BSEO:0100002 SPLIT=|",
+        "SC BSEO:1000000",
+        "SC BSEO:1000001",
+        "SC BSEO:1000002 SPLIT=|",
     )
-    rows = [
-        header_2,
-        (f"{PREFIX}:0000005", "owl:Class", "ANO basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000006", "owl:Class", "ANO-RCC basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000007", "owl:Class", "STO basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000008", "owl:Class", "seg-cc basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000009", "owl:Class", "SBO4 basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000010", "owl:Class", "saug-ano basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000011", "owl:Class", "SARC2-QZVP basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000012", "owl:Class", "SARC2-QZV basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000013", "owl:Class", "Sapporo-TZP basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000014", "owl:Class", "Sapporo-QZP basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000015", "owl:Class", "Sapporo-DZP basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000016", "owl:Class", "Sapporo-DKH3 basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000017", "owl:Class", "pob basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000018", "owl:Class", "pcSseg basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000019", "owl:Class", "pcseg basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000020", "owl:Class", "pcS basis set", "", f"{PREFIX}:0000004", ""),
-        (f"{PREFIX}:0000021", "owl:Class", "pcJ basis set", "", f"{PREFIX}:0000004", ""),
+
+    header_parents = ("identifier", "parent")
+    parents_rows = [
+        ("ID", "SC %"),
     ]
+    rows: list[tuple[str, str, str, str, str, str, str, str, str]] = [header_2]
     if write:
         click.echo(
             f"Roles:\n\n{tabulate(role_counter.most_common(), headers=['role', 'count'], tablefmt='github')}"
@@ -122,13 +114,13 @@ def main() -> None:
     counter = 5
     role_to_curie = {}
     for role in role_counter:
-        role_curie = f"{PREFIX}:0001{counter:03}"
+        role_curie = f"{PREFIX}:01{counter:05}"
         role_to_curie[role] = role_curie
         rows.append(
             (
                 role_curie,
                 "owl:Class",
-                NAMES.get(role, role),
+                NAMES.get(role) or role,
                 "",
                 f"{PREFIX}:0000001",
                 "",  # description
@@ -145,13 +137,13 @@ def main() -> None:
         )
     family_to_curie = {}
     for family in family_counter:
-        family_curie = f"{PREFIX}:0002{counter:03}"
+        family_curie = f"{PREFIX}:02{counter:05}"
         family_to_curie[family] = family_curie
         rows.append(
             (
                 family_curie,
                 "owl:Class",
-                NAMES.get(family, family),
+                NAMES.get(family) or family,
                 "",
                 f"{PREFIX}:0000002",
                 "",  # description
@@ -167,13 +159,13 @@ def main() -> None:
         )
     function_type_to_curie = {}
     for function_type in function_type_counter:
-        function_type_curie = f"{PREFIX}:0003{counter:03}"
+        function_type_curie = f"{PREFIX}:03{counter:05}"
         function_type_to_curie[function_type] = function_type_curie
         rows.append(
             (
                 function_type_curie,
                 "owl:Class",
-                NAMES.get(function_type, function_type),
+                NAMES.get(function_type) or function_type,
                 "",
                 f"{PREFIX}:0000003",
                 "",  # description
@@ -206,17 +198,25 @@ def main() -> None:
 
     seen = set()
 
+    part_counter = defaultdict(list)
+
     for basis_set in basis_sets:
         if basis_set.name.strip() in seen:
             continue  # FIXME why are there duplicates?
         seen.add(basis_set.name.strip())
 
-        # TODO understand internal structure
-        basis_set.name.split("-")
+        # understand internal structure
+        for part_level_1 in basis_set.name.split("-"):
+            for part_level_2 in part_level_1.split():
+                for part_level_3 in part_level_2.split("("):
+                    if part_level_3.isnumeric():
+                        continue
+                    part_counter[part_level_3.lower()].append(basis_set.name)
 
         for name_prefix, parent_curie in parent_names:
             if basis_set.name.startswith(name_prefix):
-                parent = parent_curie
+                parents_rows.append((f"{PREFIX}:{counter:07}", parent_curie))
+                parent = ""
                 break
         else:
             if write:
@@ -227,40 +227,85 @@ def main() -> None:
             (
                 f"{PREFIX}:{counter:07}",
                 "owl:Class",
-                NAMES.get(basis_set.name, basis_set.name),  # TODO require all have proper names
+                # TODO require all have proper names
+                NAMES.get(basis_set.name) or basis_set.name,
                 basis_set.name,
                 parent,
-                basis_set.description if basis_set.description != basis_set.name else "",
+                basis_set.description
+                if basis_set.description != basis_set.name
+                else "",
                 role_to_curie[basis_set.role],
                 family_to_curie[basis_set.family],
-                "|".join(function_type_to_curie[f] for f in basis_set.function_types or []),
+                "|".join(
+                    function_type_to_curie[f] for f in basis_set.function_types or []
+                ),
             )
         )
         counter += 1
 
-    pd.DataFrame(rows, columns=header_1).to_csv("terms.tsv", sep="\t", index=False)
+    parts_already_described = set(pd.read_csv(parts_notes, sep="\t")["part"])
+
+    state = random.Random(42)
+    parts = [
+        (
+            key,
+            "yes" if key in parts_already_described else "",
+            len(values),
+            ", ".join(sorted(set(state.choices(values, k=3)))),
+        )
+        for key, values in part_counter.items()
+    ]
+
+    pd.DataFrame(
+        parts, columns=["name", "curated", "frequency", "examples"]
+    ).sort_values("frequency", ascending=False).to_csv(
+        "parts_frequencies.tsv", sep="\t", index=False
+    )
+
+    pd.DataFrame(rows, columns=header_1).to_csv(
+        "derived-terms.tsv", sep="\t", index=False
+    )
+    pd.DataFrame(parents_rows, columns=header_parents).to_csv(
+        "derived-subclass-relations.tsv", sep="\t", index=False
+    )
     robot()
+
 
 def robot():
     os.system(
         f"robot template "
         f'--prefix "{PREFIX}: http://purl.obolibrary.org/obo/{PREFIX}_" '
-        f"--template terms-manual.tsv "
-        f"--output {manual_output.as_posix()}"
+        f"--template derived-terms.tsv "
+        f"--output {derived_terms_owl_path}"
     )
     os.system(
         f"robot template "
         f'--prefix "{PREFIX}: http://purl.obolibrary.org/obo/{PREFIX}_" '
-        f"--template terms.tsv "
-        f"--output {automatic_output}"
+        f"--template terms-manual.tsv "
+        f"--output {manual_terms_owl_path}"
+    )
+    os.system(
+        f"robot template "
+        f'--prefix "{PREFIX}: http://purl.obolibrary.org/obo/{PREFIX}_" '
+        f"--template properties.tsv "
+        f"--output {manual_properties_owl_path}"
+    )
+    os.system(
+        f"robot template "
+        f'--prefix "{PREFIX}: http://purl.obolibrary.org/obo/{PREFIX}_" '
+        f"--template derived-subclass-relations.tsv "
+        f"--output {derived_relations_owl_path}"
     )
     os.system(
         f"robot merge "
-        f"--input {manual_output} "
-        f"--input {automatic_output} "
+        f"--input {manual_terms_owl_path} "
+        f"--input {manual_properties_owl_path} "
+        f"--input {derived_relations_owl_path} "
+        f"--input {derived_terms_owl_path} "
         "annotate "
         f'--ontology-iri "http://purl.obolibrary.org/obo/{PREFIX.lower()}.owl" '
-        f"--output {final_output}")
+        f"--output {final_output}"
+    )
 
 
 if __name__ == "__main__":
